@@ -9,6 +9,9 @@
     --color-ocean:#404BBF;
     --tra: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+main{
+    margin-top: 70px;
+}
 .list{
     list-style: none;
 }
@@ -321,11 +324,9 @@ body{
     }
     .header-contacts {
         color: var(--color-slate);
-        font-size: 16px;
-        line-height: 1.5;
-        letter-spacing: 0.02em;
-        padding-top: 24px;
-        padding-bottom: 24px;
+        font-size: 12px;
+        line-height: 1.33;
+        letter-spacing: 0.04em;
         transition: color var(--tra);
     }
     .header-contacts:hover {
@@ -333,9 +334,6 @@ body{
     }
 }
 @media screen and (min-width: 768px) and (max-width: 1199px) {
-    .header-container {
-        align-items: flex-end;
-    }
     .logo-2 {
         margin-right: 120px
     }
@@ -343,6 +341,13 @@ body{
 @media screen and (min-width: 1200px){
     .logo-2 {
         margin-right: 76px
+    }
+    .header-contacts{
+        font-size: 16px;
+        line-height: 1.5;
+        letter-spacing: 0.02em;
+        padding-top: 24px;
+        padding-bottom: 24px;
     }
     .contacts-list {
         display: flex;
@@ -396,6 +401,7 @@ body{
         margin: auto;
         padding: 112px 0 112px;
     }
+
     .main-title {
         font-weight: 700;
         font-size: 36px;
@@ -440,10 +446,6 @@ screen and (min-resolution: 2dppx) and (max-width: 767px) {
         color: #FFFFFF;
         max-width: 500px;
         margin: 0 auto 72px;
-    }
-    .main-section {
-        padding-top: 112px;
-        padding-bottom: 108px;
     }
 }
 @media screen and (min-device-pixel-ratio: 2) and (min-width: 768px),
@@ -575,6 +577,7 @@ screen and (min-resolution: 2dppx) and (min-width: 1200px) {
 @media screen and (min-width: 1200px){
     .about-list {
         display: flex;
+        justify-content: center;
         gap: 24px;
     }
     .about-our-work {
@@ -727,11 +730,16 @@ screen and (min-resolution: 2dppx) and (min-width: 1200px) {
     }
     .customers-list{
         column-gap: 24px;
+        max-width: 570px;
+        margin: 0 auto;
     }
 }
 @media screen and (min-width: 1200px){
     .customers-user {
         width: calc((100% - 120px) / 6);
+    }
+    .customers-list {
+        max-width: 100%;
     }
 }
 /*---------------   FOOTER  ----------------- */
@@ -878,13 +886,14 @@ screen and (min-resolution: 2dppx) and (min-width: 1200px) {
     .footer-text-container{
         margin-bottom: 0;
         align-items: baseline;
+        max-width: 264px;
     }
     .footer-icons-item{
         text-align: left;
     }
     .footer-subscribe-input{
-        width: 264px;
         margin: 0;
+        width: 264px;
     }
     .footer-subscribe-form {
         display: flex;
@@ -897,22 +906,19 @@ screen and (min-resolution: 2dppx) and (min-width: 1200px) {
     .footer-subscribe-title{
         text-align: start;
     }
-    .footer-subscribe-input{
-        margin-right: 24px;
-    }
     .footer-flex {
         display: flex;
     }
 }
 @media screen and (min-width: 768px) and (max-width: 1199px) {
     .footer-flex {
-        align-items: flex-start;
-        justify-content: center;
         margin-bottom: 72px;
         gap: 24px;
     }
     .footer-container {
-        padding: 0 108px;
+        display: flex;
+        flex-direction: column;
+        justify-content: left;
     }
 }
 @media screen and (min-width: 1200px){
@@ -924,11 +930,14 @@ screen and (min-resolution: 2dppx) and (min-width: 1200px) {
     .footer-flex{
         gap: 120px;
     }
+    .footer-subscribe-input{
+        margin-right: 0;
+    }
 }
 
 /*---------------   MODAL  ----------------- */
 
-/* .modal-bgd {
+.modal-bgd {
     opacity: 1;
     width: 100%;
     height: 100%;
@@ -945,7 +954,7 @@ screen and (min-resolution: 2dppx) and (min-width: 1200px) {
 }
 
 .modal{
-    width: 408px;
+    width: calc(100% - 20px);
     position: relative;
     top: 50%;
     left: 50%;
@@ -1142,19 +1151,27 @@ screen and (min-resolution: 2dppx) and (min-width: 1200px) {
 .modal-button:focus {
     background: var(--color-ocean);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-} */
-
+}
+@media screen and (min-width: 428px){
+    .modal {
+        width: 392px;
+    }
+}
+@media screen and (min-width: 768px) {
+    .modal {
+        width: 408px;
+    }
+}
 /*---------------   PORTFOLIO  ----------------- */
 .portfolio-section{
     padding: 48px 0;
-    margin-top: 70px;
 }
 .filters-container {
     display: flex;
     flex-wrap: wrap;
     row-gap: 16px;
     column-gap: 20px;
-    padding: 0 0 48px;
+    padding-bottom: 48px;
 }
 .filter {
     font-weight: 500;
@@ -1180,7 +1197,7 @@ screen and (min-resolution: 2dppx) and (min-width: 1200px) {
 
 .project {
     background-color: #FFFFFF;
-    width: calc(100% - 30px);
+    width: 100%;
 }
 .project-link {
     display: inline-block;
@@ -1198,8 +1215,7 @@ screen and (min-resolution: 2dppx) and (min-width: 1200px) {
 
 .portfolio-box {
     position: relative;
-    width: 360px;
-    height: 280px;
+    width: 100%;
     overflow: hidden;
 }
 
@@ -1212,7 +1228,7 @@ screen and (min-resolution: 2dppx) and (min-width: 1200px) {
     transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.portfolio-box:hover .overlay {
+.project:hover .overlay {
     transform: translateY(0);
 }
 
@@ -1254,25 +1270,28 @@ screen and (min-resolution: 2dppx) and (min-width: 1200px) {
 }
 @media screen and (max-width: 767px) {
     .filters-container {
-        width: 263px;
+        max-width: 280px;
+    }
+    .project-list{
+        margin: 0;
     }
     .project{
-        margin: 0 auto 48px;
+        margin-bottom: 48px;
     }
     .project:last-child{
         margin-bottom: 0;
     }
-    .portfolio-section .container{
-        padding-left: 0;
-        padding-right: 0;
-    }
 }
 
 @media screen and (min-width: 768px) {
+    .portfolio-section{
+        padding: 64px 0 96px;
+    }
     .filters-container {
         justify-content: center;
         gap: 24px;
-        margin: 64px 0;
+        padding: 0;
+        margin-bottom: 64px;
     }
     .filter {
         padding: 12px 24px;
@@ -1282,15 +1301,14 @@ screen and (min-resolution: 2dppx) and (min-width: 1200px) {
         flex-wrap: wrap;
         row-gap: 48px;
         column-gap: 24px;
-        margin-bottom: 96px;
     }    
     .project{
         width: calc((100% - 24px) / 2);
     }
 }
 @media screen and (min-width: 1200px){
-    .project-list{
-        margin-bottom: 120px;
+    .portfolio-section {
+        padding: 96px 0 120px;
     }
     .project {
         width: calc((100% - 48px) / 3);
