@@ -409,7 +409,8 @@ body{
         text-align: center;
         letter-spacing: 0.02em;
         color: #FFFFFF;
-        margin-bottom: 72px;
+        max-width: 318px;
+        margin: 0 auto 72px;
     }
 }
 @media screen and (min-width: 428px){
@@ -577,7 +578,7 @@ screen and (min-resolution: 2dppx) and (min-width: 1200px) {
 @media screen and (min-width: 1200px){
     .about-list {
         display: flex;
-        justify-content: center;
+        justify-content: space-between;
         gap: 24px;
     }
     .about-our-work {
@@ -653,8 +654,14 @@ screen and (min-resolution: 2dppx) and (min-width: 1200px) {
     background-color: var(--color-ocean);
 }
 @media screen and (max-width: 767px){
+    .our-team-section{
+        padding-bottom: 128px;
+    }
     .user{
         margin: 0 auto 72px;
+    }
+    .user:last-child{
+        margin-bottom: 0;
     }
 }
 @media screen and (min-width: 768px){
@@ -663,7 +670,7 @@ screen and (min-resolution: 2dppx) and (min-width: 1200px) {
         flex-wrap: wrap;
         row-gap: 72px;
         column-gap: 24px;
-        justify-content: center;
+        justify-content: space-between;
     }
 }
 @media screen and (min-width: 1200px){
@@ -918,7 +925,7 @@ screen and (min-resolution: 2dppx) and (min-width: 1200px) {
     .footer-container {
         display: flex;
         flex-direction: column;
-        justify-content: left;
+        padding-left: 108px;
     }
 }
 @media screen and (min-width: 1200px){
@@ -926,6 +933,7 @@ screen and (min-resolution: 2dppx) and (min-width: 1200px) {
         display: flex;
         gap: 80px;
         align-items: flex-start;
+        justify-content: space-between;
     }
     .footer-flex{
         gap: 120px;
@@ -1171,7 +1179,7 @@ screen and (min-resolution: 2dppx) and (min-width: 1200px) {
     flex-wrap: wrap;
     row-gap: 16px;
     column-gap: 20px;
-    padding-bottom: 48px;
+    margin-bottom: 48px;
 }
 .filter {
     font-weight: 500;
@@ -1269,9 +1277,6 @@ screen and (min-resolution: 2dppx) and (min-width: 1200px) {
     color: var(--color-slate);
 }
 @media screen and (max-width: 767px) {
-    .filters-container {
-        max-width: 280px;
-    }
     .project-list{
         margin: 0;
     }
